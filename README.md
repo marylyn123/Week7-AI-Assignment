@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project audits the **COMPAS Recidivism Dataset** for potential racial bias in risk score predictions using the [AI Fairness 360 (AIF360)](https://aif360.mybluemix.net/) toolkit developed by IBM. The analysis focuses on fairness metrics such as **false positive rates**, **disparate impact**, and **equal opportunity difference**, especially across racial groups (e.g., African-American vs. Caucasian defendants).
+This project audits the **COMPAS Recidivism Dataset** for pOtential racial bias in risk score predictions using the [AI Fairness 360 (AIF360)](https://aif360.mybluemix.net/) toolkit developed by IBM. The analysis focuses on fairness metrics such as **false positive rates**, **disparate impact**, and **equal opportunity difference**, especially across racial groups (e.g., African-American vs. Caucasian defendants).
 
 ---
 
