@@ -1,0 +1,51 @@
+# Install necessary packages (only run once)
+# !pip install aif360 numpy pandas matplotlib seaborn
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from aif360.datasets import CompasDataset
+from aif360.metrics import BinaryLabelDatasetMetric, ClassificationMetric
+from aif360.algorithms.preprocessing import Reweighing
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# Load the COMPAS dataset
+dataset = CompasDataset()
+
+# Define privileged and unprivileged groups based on race
+privileged_groups = [{'race': 1}]  # Caucasian
+unprivileged_groups = [{'race': 0}]  # African-American
+
+# Split into train/test
+train, test = dataset.split([0.7], shuffle=True)
+
+# Train a simple logistic regression model
+X_train = train.features
+y_train = train.labels.ravel()
+
+lr = LogisticRegression(solver='liblinear')
+lr.fit(X_train, y_train)
+
+# Predict on test set
+test_pred = test.copy()
+test_pred.labels = lr.predict(test.features).reshape(-1, 1)
+
+# Evaluate fairness metrics
+classified_metric = ClassificationMetric(
+    test, test_pred,
+    unprivileged_groups=unprivileged_groups,
+    privileged_groups=privileged_groups
+)
+
+# Extract False Positive Rate
+fpr_unpriv = classified_metric.false_positive_rate(unprivileged=True)
+fpr_priv = classified_metric.false_positive_rate(unprivileged=False)
+
+# Visualization
+plt.bar(['African-American', 'Caucasian'], [fpr_unpriv, fpr_priv], color=['red', 'blue'])
+plt.title('False Positive Rate by Race')
+plt.ylabel('False Positive Rate')
+plt.show()
