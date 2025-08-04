@@ -1,0 +1,17 @@
+Ethical risks:
+• Disparate misidentification: a 2017 NIST FRVT evaluation showed false-positive rates up to 10 × – 100 × higher for East African, West African, and East Asian individuals than for white males during 1:N matching. :contentReference[oaicite:0]{index=0}
+• Wrongful arrests and lost trust: in Detroit, Robert Williams and at least two other Black people were wrongfully arrested based solely on flawed facial recognition matches. Detroit later agreed to policy reforms after settlement litigation. :contentReference[oaicite:1]{index=1}
+• Automation bias and reduced human oversight: officers may treat match scores as definitive—one Maryland case saw Alonzo Sawyer detained despite an alibi because of an AI match. :contentReference[oaicite:2]{index=2}
+• Surveillance-related privacy harms and chilling effects: mass live face scanning creates immutable biometric databases and can suppress civic participation, especially in over‑policed Black and brown communities. :contentReference[oaicite:3]{index=3}
+
+Policy recommendations:
+1. Prohibit arrests or formal charges based solely on FRT matches. Law enforcement must obtain independent corroborating evidence (e.g. video, eyewitness testimony) before proceeding. Detroit’s 2024 ACLU settlement codified this standard. :contentReference[oaicite:4]{index=4}
+2. Require pre-deployment, third-party fairness and accuracy audits (for example via NIST FRVT). Systems must publicly demonstrate demographic error-rate parity (e.g. ≤ 20% differential) before procurement. Brookings recommends this as a baseline policy defense against bias. :contentReference[oaicite:5]{index=5}
+3. Restrict live biometric scanning in public or commercial surveillance without legal authorization. The EU AI Act classifies real-time biometric identification as “high‑risk” and broadly prohibits untargeted deployment in public spaces. :contentReference[oaicite:6]{index=6}
+4. Enforce “human-in-the-loop” practices: every FRT alert or lead must be reviewed by trained personnel. Policy changes secured in Detroit also require human review and training on FRT’s demographic limitations. :contentReference[oaicite:7]{index=7}
+5. Implement transparency mandates: agencies must post public notice at FRT scanning locations, retain tamper-evident logs of all identification searches, test outcomes, and publish anonymized statistics on usage and error rates. :contentReference[oaicite:8]{index=8}
+6. Enforce data minimization: automatically delete probe images and biometric templates if no match is confirmed within a defined interval (typically 30 days), and limit watchlist inclusion to individuals under active criminal investigation.
+7. Guarantee redress rights: wrongfully matched individuals must have access to their FRT search records, the right to request corrections or deletions, and a clear legal path to seek compensation or expungement.
+8. Mandate comprehensive training: police personnel and leadership must receive curriculum on FRT limitations, demographic bias statistics, and risks of automation bias.
+9. Use phased pilots with external ethics oversight and defined sunset clauses: allow deployment only during a trial period if independent reviewers validate fairness thresholds; rollback if analysis shows harm or inequity.
+
